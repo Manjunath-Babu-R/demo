@@ -10,13 +10,17 @@ object Mnemonic {
   def main(args: Array[String]): Unit = {
 
     val env = System.getenv("mnemonic.lifecycle")
-
+     println("hello hi")
     val contextManager = ContextFactory.initForProdDSLWithLocalSparkSession()
     //val contextManager = ContextFactory.initForProdSQLWithLocalSparkSession()
 
     val inputDf = contextManager.readInputDataframes
     val outputDf = contextManager.processInputDataframes(inputDf)
     val dataWritten = contextManager.writeDataframes(outputDf)
+
+
+
+
 
     println(s"The data has been processed : ${dataWritten}")
   }
